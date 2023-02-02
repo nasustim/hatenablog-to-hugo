@@ -1,8 +1,6 @@
 #!/bin/sh
 
-test_files=($(find ./ | grep "_test.cpp"))
-
-for test_file in "${test_files[@]}"; do
+for test_file in $(find ./ | grep "_test.cpp"); do
   source_file=$(echo "$test_file" | sed -e 's/_test//g')
 
   echo "[test] $test_file"
