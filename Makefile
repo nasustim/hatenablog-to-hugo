@@ -1,4 +1,4 @@
-.PHONY: build run
+.PHONY: build run fulltest
 
 build:
 	./env g++ \
@@ -7,3 +7,6 @@ build:
 
 run: a.out
 	./env ./a.out
+
+fulltest:
+	./fulltest
