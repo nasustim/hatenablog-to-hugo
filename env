@@ -1,0 +1,13 @@
+#!/bin/sh
+
+IMAGE_NAME="hatenablog-to-hugo"
+
+image_builded=$(docker image ls | grep "$IMAGE_NAME")
+if [ -z "$image_builded" ]; then
+  echo "image building..."
+  docker build -t "$IMAGE_NAME" .
+fi
+
+docker run --rm -v $(pwd):/work -it hatenablog-to-hugo $*
+
+exit 0
