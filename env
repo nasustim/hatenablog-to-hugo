@@ -8,6 +8,6 @@ if [ -z "$image_builded" ]; then
   docker build -t "$IMAGE_NAME" .
 fi
 
-docker run --rm -v "$(pwd)":/work -it "$IMAGE_NAME" $*
+docker run --rm -v "$(pwd)":/work "$IMAGE_NAME" $*
 
 exit 0
