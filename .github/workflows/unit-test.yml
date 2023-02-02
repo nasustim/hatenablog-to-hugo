@@ -13,6 +13,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3.3.0
+        with:
+          fetch-depth: 0
+          submodules: true
 
       - run: docker build -t hatenablog-to-hugo .
 
