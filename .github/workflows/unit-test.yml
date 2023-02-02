@@ -14,5 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3.3.0
 
+      - run: docker build -t hatenablog-to-hugo .
+
       - name: test
         run: make fulltest
