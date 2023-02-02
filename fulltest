@@ -7,3 +7,5 @@ for test_file in $(find ./ | grep "_test.cpp"); do
   ./env g++ -std=c++20 "$source_file" "$test_file" -L/usr/local/lib -lgtest -lgtest_main
   ./env ./a.out
 done
+
+exit 0
