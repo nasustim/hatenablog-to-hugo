@@ -17,8 +17,6 @@ jobs:
           fetch-depth: 0
           submodules: true
 
-      - run: docker build -t hatenablog-to-hugo .
-
       - name: test
         run: make fulltest
 
