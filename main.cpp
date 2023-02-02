@@ -1,8 +1,21 @@
 #include <iostream>
+#include <string>
+#include <vector>
 
-int main()
+#include "lib/file/read.hpp"
+
+int main(int argc, char **argv)
 {
-    std::cout << "Hello, World!" << std::endl;
+    if (argc <= 1)
+    {
+        std::cerr << "require path to target file." << std::endl;
+        exit(-1);
+    }
+    std::vector<std::string> lines = ReadLine(argv[1]);
 
-    return 0;
+    // print lines
+    for (int i = 0; i < lines.size(); i++)
+        std::cout << lines[i] << std::endl;
+
+    exit(0);
 }
