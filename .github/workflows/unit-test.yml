@@ -20,7 +20,7 @@ jobs:
       - run: docker build -t hatenablog-to-hugo .
 
       - name: test
-        run: make fulltest'
+        run: make fulltest
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
