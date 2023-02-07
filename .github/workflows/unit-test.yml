@@ -17,8 +17,21 @@ jobs:
           fetch-depth: 0
           submodules: true
 
+      - name: Install deps
+        run: |
+          apt-get update
+          apt-get install -y g++ cmake
+
+          ./googletest /usr/local/src/googletest
+          cd /usr/local/src/googletest
+          mkdir build
+          cd build
+          cmake ..
+          make
+          make install
+
       - name: test
-        run: make fulltest
+        run: ./fulltest
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
