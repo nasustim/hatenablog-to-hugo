@@ -9,4 +9,4 @@ run: a.out
 	./env ./a.out
 
 fulltest:
-	./fulltest
+	./env ./fulltest
