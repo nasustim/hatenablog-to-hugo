@@ -19,8 +19,8 @@ jobs:
 
       - name: Install deps
         run: |
-          apt-get update
-          apt-get install -y g++ cmake
+          sudo apt update
+          sudo apt install -y g++ cmake
 
           ./googletest /usr/local/src/googletest
           cd /usr/local/src/googletest
