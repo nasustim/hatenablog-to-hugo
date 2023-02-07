@@ -11,5 +11,5 @@ TEST(ReadLine, SUCCESS)
     expect.push_back("aaa");
     expect.push_back("bbb");
 
-    EXPECT_EQ(expect, ReadLine("./dummy.txt"));
+    EXPECT_EQ(expect, ReadLine("./assets/dummy.txt"));
 }
