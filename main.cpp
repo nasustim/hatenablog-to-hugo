@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "lib/file/read.hpp"
+#include "lib/hatenablog/movabletype.hpp"
 
 int main(int argc, char **argv)
 {
@@ -13,9 +14,8 @@ int main(int argc, char **argv)
     }
     std::vector<std::string> lines = ReadLine(argv[1]);
 
-    // print lines
-    for (int i = 0; i < lines.size(); i++)
-        std::cout << lines[i] << std::endl;
+    MovableType *m = new MovableType(lines);
+    m->Parse();
 
     exit(0);
 }
